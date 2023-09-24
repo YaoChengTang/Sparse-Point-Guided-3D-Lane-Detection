@@ -3,9 +3,9 @@ Sparse Point Guided 3D Lane Detection
 
 We build our work based on [PersFormer](https://github.com/OpenDriveLab/PersFormer_3DLane). Thanks for their great work.
 
-[x] Code for training and testing
-[] Pre-trained model
-[] Code update
+- [x] Code for training and testing
+- [ ] Pre-trained model
+- [ ] Code update
 
 # Citation
 If you use our source code or our paper, please consider citing the following:
