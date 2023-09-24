@@ -28,10 +28,10 @@ def config(args):
     # args.batch_size = 4
     args.dataset_name = 'openlane'
     args.dataset_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/images/'
-    # args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/'
+    args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/'
     # args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/test/up_down_case/'
     # args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/test/curve_case/'
-    args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/test/extreme_weather_case/'
+    # args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/test/extreme_weather_case/'
     # args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/test/night_case/'
     # args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/test/intersection_case/'
     # args.data_dir = '/mnt/csi-data-aly/shared/public/3DLane/OpenLane/lane3d_1000/test/merge_split_case/'
@@ -49,7 +49,7 @@ def config(args):
     
     # for the case only running evaluation
     args.evaluate = True
-    args.evaluate_case = True
+    args.evaluate_case = False
 
     # settings for save and visualize
     args.print_freq = 50
@@ -90,7 +90,7 @@ def config(args):
     args.batch_norm = True
     
     # sampling
-    args.sampling_step = np.array([1., 1])
+    args.sampling_step = np.array([2,0.125])
     # args.sampling_step = np.array([1., 0.5])
     args.sampling_size = np.array([3, 3])
 
@@ -131,7 +131,7 @@ def config(args):
     # learnable weight
     # in best model setting, they are 10, 4, 1, 100, 100, 100, 10
     # factor = 1 / exp(weight)
-    args.learnable_weight_on = True
+    args.learnable_weight_on = False
     args._3d_vis_loss_weight = 0.0 # -2.3026
     args._3d_prob_loss_weight = 0.0 # -1.3863
     args._3d_reg_loss_weight = 0.0
@@ -210,6 +210,9 @@ def openlane_config(args):
     args.no_3d = False
     args.fix_cam = False
     args.pred_cam = False
+
+    args.resize_h=360*2
+    args.resize_w=480*2
 
     # Placeholder, shouldn't be used
     args.K = np.array([[1000., 0., 960.],

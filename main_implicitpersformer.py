@@ -25,7 +25,7 @@ def main():
     parser = define_args() # args in utils.py
     args = parser.parse_args()
     # specify dataset and model config
-    implicit_persformer_openlane.config(args)
+    implicit_persformer_openlane_high.config(args)
     # initialize distributed data parallel set
     ddp_init(args)
     # define runner to begin training or evaluation
